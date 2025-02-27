@@ -1,0 +1,183 @@
+/* You can add global styles to this file, and also import other style files */
+
+// Custom variables
+$primary: #0d6efd;
+$secondary: #6c757d;
+$success: #198754;
+$info: #0dcaf0;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #212529;
+
+// General styles
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+// Animation for router transitions
+.container {
+  min-height: 50vh;
+}
+
+// Button styles
+.btn {
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  
+  i {
+    vertical-align: middle;
+    margin-top: -2px;
+  }
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  &.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  &.btn-lg {
+    padding: 0.75rem 1.25rem;
+    font-size: 1.1rem;
+  }
+}
+
+// Card styles
+.card {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Table styles
+.table {
+  margin-bottom: 0;
+  
+  thead th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    border-top: none;
+    border-bottom: 1px solid #dee2e6;
+    padding: 0.85rem 0.75rem;
+  }
+  
+  tbody tr {
+    transition: background-color 0.2s ease;
+    
+    &:hover {
+      background-color: rgba(13, 110, 253, 0.05);
+    }
+  }
+}
+
+// Form styles
+.form-control, .form-select {
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  border-color: #ced4da;
+  
+  &:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    border-color: #86b7fe;
+  }
+}
+
+.input-group-text {
+  background-color: #f8f9fa;
+  border-color: #ced4da;
+}
+
+// Alert styles
+.alert {
+  border: none;
+  border-radius: 8px;
+  
+  i {
+    vertical-align: middle;
+    margin-top: -2px;
+  }
+}
+
+// Utility classes
+.shadow-sm {
+  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+}
+
+.shadow {
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+// Reduce motion for accessibility
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 767.98px) {
+  .card-body {
+    padding: 1.25rem;
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+// Dark mode (optional, commented out by default)
+// @media (prefers-color-scheme: dark) {
+//   body {
+//     background-color: #121212;
+//     color: #f5f5f5;
+//   }
+  
+//   .card, .modal-content {
+//     background-color: #1e1e1e;
+//     color: #f5f5f5;
+//   }
+  
+//   .bg-light {
+//     background-color: #2d2d2d !important;
+//   }
+  
+//   .table {
+//     color: #f5f5f5;
+    
+//     thead th {
+//       background-color: #2d2d2d;
+//       color: #f5f5f5;
+//     }
+    
+//     tbody tr:hover {
+//       background-color: rgba(255, 255, 255, 0.05);
+//     }
+//   }
+// }

@@ -1,0 +1,134 @@
+<div class="container" @slideInAnimation>
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="dashboard-header rounded p-4 shadow">
+        <h1 class="mb-1"><i class="bi bi-people-fill me-2"></i> Employee Management Dashboard</h1>
+        <p class="lead mb-0">Handling Employee Information Efficiently</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Error Message -->
+  <div class="alert alert-danger" *ngIf="errorMessage">
+    <i class="bi bi-exclamation-triangle-fill me-2"></i> {{ errorMessage }}
+    <button type="button" class="btn btn-sm btn-danger ms-3" (click)="loadDashboardData()">
+      <i class="bi bi-arrow-clockwise me-1"></i> Retry
+    </button>
+  </div>
+
+  <!-- Dashboard Metrics -->
+  <div class="row mb-4">
+    <div class="col-md-4 mb-3 mb-md-0">
+      <div class="card metric-card h-100 shadow-sm">
+        <div class="card-body text-center">
+          <div class="metric-icon bg-primary mb-3">
+            <i class="bi bi-people"></i>
+          </div>
+          <div *ngIf="isLoading" class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <h2 class="metric-value mb-2" *ngIf="!isLoading">{{ totalEmployees }}</h2>
+          <h5 class="card-title">Total Employees</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3 mb-md-0">
+      <div class="card metric-card h-100 shadow-sm">
+        <div class="card-body text-center">
+          <div class="metric-icon bg-success mb-3">
+            <i class="bi bi-globe"></i>
+          </div>
+          <div *ngIf="isLoading" class="spinner-border text-success" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <h2 class="metric-value mb-2" *ngIf="!isLoading">{{ uniqueCountries }}</h2>
+          <h5 class="card-title">Countries</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3 mb-md-0">
+      <div class="card metric-card h-100 shadow-sm">
+        <div class="card-body text-center">
+          <div class="metric-icon bg-info mb-3">
+            <i class="bi bi-building"></i>
+          </div>
+          <div *ngIf="isLoading" class="spinner-border text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <h2 class="metric-value mb-2" *ngIf="!isLoading">{{ uniqueCities }}</h2>
+          <h5 class="card-title">Cities</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Actions & Recent Employees -->
+  <div class="row">
+    <div class="col-lg-5 mb-4 mb-lg-0">
+      <div class="card shadow-sm h-100">
+        <div class="card-header bg-light">
+          <h5 class="card-title mb-0">
+            <i class="bi bi-lightning-charge me-2"></i> Quick Actions
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="d-grid gap-3">
+            <a routerLink="/employees" class="btn btn-outline-primary btn-lg">
+              <i class="bi bi-list-ul me-2"></i> View All Employees
+            </a>
+            <a routerLink="/employees/new" class="btn btn-outline-success btn-lg">
+              <i class="bi bi-person-plus me-2"></i> Add New Employee
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-7">
+      <div class="card shadow-sm h-100">
+        <div class="card-header bg-light">
+          <h5 class="card-title mb-0">
+            <i class="bi bi-clock-history me-2"></i> Recent Employees
+          </h5>
+        </div>
+        <div class="card-body p-0">
+          <div *ngIf="isLoading" class="text-center p-5">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-2 text-muted">Loading recent employees...</p>
+          </div>
+          
+          <ul class="list-group list-group-flush" *ngIf="!isLoading">
+            <li class="list-group-item" *ngFor="let employee of recentEmployees">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <h6 class="mb-0">{{ employee.name }}</h6>
+                  <small class="text-muted">
+                    <i class="bi bi-geo-alt me-1"></i> 
+                    {{ employee.city }}, {{ employee.country }}
+                  </small>
+                </div>
+                <div class="d-flex">
+                  <span class="badge bg-info me-2">
+                    Joined: {{ employee.dateOfEntry | date:'shortDate' }}
+                  </span>
+                  <a [routerLink]="['/employees/details', employee.id]" class="btn btn-sm btn-primary">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                </div>
+              </div>
+            </li>
+            
+            <li *ngIf="recentEmployees.length === 0" class="list-group-item text-center py-4">
+              <i class="bi bi-inbox fs-1 text-muted d-block mb-2"></i>
+              <p>No employees found. <a routerLink="/employees/new">Add your first employee!</a></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

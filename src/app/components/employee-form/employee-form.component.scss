@@ -1,0 +1,92 @@
+.card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    
+    .card-header {
+      padding: 1.25rem 1.5rem;
+      background-color: #f8f9fa;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      
+      h3 {
+        font-size: 1.35rem;
+        font-weight: 600;
+        
+        i {
+          margin-right: 10px;
+          opacity: 0.8;
+        }
+      }
+    }
+    
+    .card-body {
+      padding: 1.5rem;
+    }
+    
+    .card-footer {
+      padding: 1.25rem 1.5rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .form-label {
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+  
+  .input-group-text {
+    border: 1px solid #ced4da;
+    i {
+      width: 16px;
+      text-align: center;
+    }
+  }
+  
+  .invalid-feedback {
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+  }
+  
+  .form-control, .form-select {
+    padding: 0.5rem 0.75rem;
+    border-color: #ced4da;
+    
+    &:focus {
+      box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+      border-color: #86b7fe;
+    }
+    
+    &.is-invalid {
+      border-color: #dc3545;
+      background-image: none;
+      
+      &:focus {
+        box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+      }
+    }
+  }
+  
+  // Toast styling
+  .toast-container {
+    z-index: 1100;
+  }
+  
+  .toast {
+    opacity: 1 !important;
+    border: none;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .toast-header {
+    border-bottom: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+  
+  .toast-body {
+    padding: 0.8rem;
+  }

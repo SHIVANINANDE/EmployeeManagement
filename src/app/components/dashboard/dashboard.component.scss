@@ -1,0 +1,77 @@
+.dashboard-header {
+    background-image: linear-gradient(135deg, #0d6efd 0%, #0a4da2 100%);
+    background-size: cover;
+    border-radius: 8px;
+    margin-top: 15px;
+    padding: 30px;
+    color: white;
+  }
+  
+  .metric-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+    }
+  }
+  
+  .metric-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    i {
+      font-size: 2.5rem;
+      color: white;
+    }
+  }
+  
+  .metric-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #333;
+    margin-top: 10px;
+  }
+  
+  .card {
+    border: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    .card-header {
+      font-weight: 600;
+      border-bottom: 1px solid rgba(0,0,0,.125);
+    }
+  }
+  
+  .list-group-item {
+    padding: 15px 20px;
+    transition: background-color 0.2s ease;
+    
+    &:hover {
+      background-color: #f8f9fa;
+    }
+  }
+  
+  .bg-primary {
+    background-color: #0d6efd !important;
+  }
+  
+  .bg-success {
+    background-color: #198754 !important;
+  }
+  
+  .bg-info {
+    background-color: #0dcaf0 !important;
+  }
+  
+  .btn-lg {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+  }

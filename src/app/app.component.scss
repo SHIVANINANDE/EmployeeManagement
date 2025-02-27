@@ -1,0 +1,17 @@
+::ng-deep {
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
+  .main-container {
+    flex: 1;
+    padding: 20px 0;
+    min-height: calc(100vh - 140px);
+  }
+  
+  .footer {
+    height: 60px;
+  }
